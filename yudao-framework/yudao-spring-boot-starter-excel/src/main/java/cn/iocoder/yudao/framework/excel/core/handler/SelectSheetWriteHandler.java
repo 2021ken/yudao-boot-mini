@@ -30,7 +30,6 @@ import static cn.iocoder.yudao.framework.common.util.collection.CollectionUtils.
 /**
  * 基于固定 sheet 实现下拉框
  *
- * @author HUIHUI
  */
 @Slf4j
 public class SelectSheetWriteHandler implements SheetWriteHandler {

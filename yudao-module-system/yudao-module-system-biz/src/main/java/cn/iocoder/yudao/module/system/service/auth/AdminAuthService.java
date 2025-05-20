@@ -10,7 +10,7 @@ import javax.validation.Valid;
  *
  * 提供用户的登录、登出的能力
  *
- * @author 芋道源码
+
  */
 public interface AdminAuthService {
 
@@ -54,13 +54,7 @@ public interface AdminAuthService {
      */
     AuthLoginRespVO smsLogin(AuthSmsLoginReqVO reqVO);
 
-    /**
-     * 社交快捷登录，使用 code 授权码
-     *
-     * @param reqVO 登录信息
-     * @return 登录结果
-     */
-    AuthLoginRespVO socialLogin(@Valid AuthSocialLoginReqVO reqVO);
+
 
     /**
      * 刷新访问令牌

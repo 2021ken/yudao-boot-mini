@@ -3,8 +3,8 @@ package cn.iocoder.yudao.module.infra.service.logger;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
 import cn.iocoder.yudao.framework.common.util.string.StrUtils;
-import cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
+
+
 import cn.iocoder.yudao.module.infra.api.logger.dto.ApiErrorLogCreateReqDTO;
 import cn.iocoder.yudao.module.infra.controller.admin.logger.vo.apierrorlog.ApiErrorLogPageReqVO;
 import cn.iocoder.yudao.module.infra.dal.dataobject.logger.ApiErrorLogDO;
@@ -25,7 +25,7 @@ import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.API_ERROR_L
 /**
  * API 错误日志 Service 实现类
  *
- * @author 芋道源码
+
  */
 @Service
 @Validated
@@ -40,12 +40,9 @@ public class ApiErrorLogServiceImpl implements ApiErrorLogService {
         ApiErrorLogDO apiErrorLog = BeanUtils.toBean(createDTO, ApiErrorLogDO.class)
                 .setProcessStatus(ApiErrorLogProcessStatusEnum.INIT.getStatus());
         apiErrorLog.setRequestParams(StrUtils.maxLength(apiErrorLog.getRequestParams(), REQUEST_PARAMS_MAX_LENGTH));
-        if (TenantContextHolder.getTenantId() != null) {
+
             apiErrorLogMapper.insert(apiErrorLog);
-        } else {
-            // 极端情况下，上下文中没有租户时，此时忽略租户上下文，避免插入失败！
-            TenantUtils.executeIgnore(() -> apiErrorLogMapper.insert(apiErrorLog));
-        }
+
     }
 
     @Override

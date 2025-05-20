@@ -1,7 +1,7 @@
 package cn.iocoder.yudao.module.infra.dal.dataobject.job;
 
 import cn.iocoder.yudao.framework.mybatis.core.dataobject.BaseDO;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
+
 import cn.iocoder.yudao.module.infra.enums.job.JobStatusEnum;
 import com.baomidou.mybatisplus.annotation.KeySequence;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,7 +11,7 @@ import lombok.*;
 /**
  * 定时任务 DO
  *
- * @author 芋道源码
+
  */
 @TableName("infra_job")
 @KeySequence("infra_job_seq") // 用于 Oracle、PostgreSQL、Kingbase、DB2、H2 数据库的主键自增。如果是 MySQL 等数据库，可不写。
@@ -21,7 +21,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TenantIgnore
+
 public class JobDO extends BaseDO {
 
     /**

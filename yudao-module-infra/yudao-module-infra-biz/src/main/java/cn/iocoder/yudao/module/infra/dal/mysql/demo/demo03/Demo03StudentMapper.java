@@ -10,7 +10,7 @@ import cn.iocoder.yudao.module.infra.controller.admin.demo.demo03.vo.*;
 /**
  * 学生 Mapper
  *
- * @author 芋道源码
+
  */
 @Mapper
 public interface Demo03StudentMapper extends BaseMapperX<Demo03StudentDO> {

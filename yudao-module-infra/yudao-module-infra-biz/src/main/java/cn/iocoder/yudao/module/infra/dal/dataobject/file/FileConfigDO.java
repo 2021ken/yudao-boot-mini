@@ -3,7 +3,7 @@ package cn.iocoder.yudao.module.infra.dal.dataobject.file;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
 import cn.iocoder.yudao.framework.mybatis.core.dataobject.BaseDO;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
+
 import cn.iocoder.yudao.module.infra.framework.file.core.client.FileClientConfig;
 import cn.iocoder.yudao.module.infra.framework.file.core.client.db.DBFileClientConfig;
 import cn.iocoder.yudao.module.infra.framework.file.core.client.ftp.FtpFileClientConfig;
@@ -23,7 +23,7 @@ import java.lang.reflect.Field;
 /**
  * 文件配置表
  *
- * @author 芋道源码
+
  */
 @TableName(value = "infra_file_config", autoResultMap = true)
 @KeySequence("infra_file_config_seq") // 用于 Oracle、PostgreSQL、Kingbase、DB2、H2 数据库的主键自增。如果是 MySQL 等数据库，可不写。
@@ -33,7 +33,7 @@ import java.lang.reflect.Field;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TenantIgnore
+
 public class FileConfigDO extends BaseDO {
 
     /**
